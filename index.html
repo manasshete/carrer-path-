@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnPath - Your Personalized Learning Roadmap</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">LearnPath</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Your Learning Journey Starts Here</h1>
+            <p class="hero-subtitle">Enter your learning goal and get a personalized roadmap powered by AI insights</p>
+            
+            <div class="goal-input-container">
+                <input 
+                    type="text" 
+                    id="goalInput" 
+                    class="goal-input" 
+                    placeholder="e.g., Crack NEET 2026, Master Python, Learn Web Development..."
+                    autocomplete="off"
+                >
+                <button id="generateBtn" class="generate-btn">Generate Roadmap</button>
+            </div>
+
+            <div class="example-goals">
+                <span class="example-label">Popular goals:</span>
+                <button class="example-goal" data-goal="Crack NEET 2026">Crack NEET 2026</button>
+                <button class="example-goal" data-goal="Master Python Programming">Master Python</button>
+                <button class="example-goal" data-goal="Learn Web Development">Web Development</button>
+            </div>
+        </div>
+
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap-section">
+        <div class="roadmap-container">
+            <div id="roadmapContent" class="roadmap-content">
+                <div class="empty-state">
+                    <p>Enter a goal above to generate your personalized learning roadmap</p>
+                </div>
+            </div>
+
+            <!-- Chatbot Interface -->
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <h3>Learning Assistant</h3>
+                    <button class="chatbot-toggle" id="chatbotToggle">−</button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="message bot-message">
+                        <p>Hi! 👋 Ask me anything about your learning path. What topic would you like help with?</p>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input 
+                        type="text" 
+                        id="chatbotInput" 
+                        placeholder="Ask about a topic..."
+                        autocomplete="off"
+                    >
+                    <button id="chatbotSend" class="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title">About LearnPath</h2>
+            
+            <div class="about-grid">
+                <div class="about-card glass-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>To democratize personalized learning by providing intelligent, adaptive roadmaps that guide students toward their educational goals with clarity and confidence.</p>
+                </div>
+
+                <div class="about-card glass-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Smart Roadmaps</h3>
+                    <p>Our AI-powered system generates customized learning paths with structured topics, realistic timelines, and progress tracking to keep you motivated.</p>
+                </div>
+
+                <div class="about-card glass-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Track your learning journey with visual progress bars, estimated completion times, and persistent storage so you never lose your progress.</p>
+                </div>
+
+                <div class="about-card glass-card">
+                    <div class="card-icon">💡</div>
+                    <h3>AI Assistant</h3>
+                    <p>Get instant learning suggestions and topic explanations from our intelligent chatbot that understands your learning path and goals.</p>
+                </div>
+            </div>
+
+            <div class="creators-section">
+                <h3>Created By</h3>
+                <p>LearnPath is built with ❤️ by a team of educators and developers passionate about making quality education accessible to everyone.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have questions or feedback? We'd love to hear from you!</p>
+
+            <form id="contactForm" class="contact-form glass-card">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required
+                        placeholder="Your name"
+                    >
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required
+                        placeholder="your@email.com"
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        name="subject" 
+                        required
+                        placeholder="What's this about?"
+                    >
+                    <span class="error-message" id="subjectError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="5" 
+                        required
+                        placeholder="Your message here..."
+                    ></textarea>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-status" id="formStatus"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 LearnPath. All rights reserved. | Empowering learners worldwide.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
